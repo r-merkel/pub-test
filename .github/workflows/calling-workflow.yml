@@ -17,6 +17,6 @@ jobs:
 
   call-workflow:
     needs: create-artifact
-    uses: .github/workflows/reusable-workflow.yml@main
+    uses: ./.github/workflows/reusable-workflow.yml
     with:
      test: "this is a test"
