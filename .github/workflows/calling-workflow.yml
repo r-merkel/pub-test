@@ -14,6 +14,7 @@ jobs:
         name: test
 
   call-workflow:
+  needs: create-artifact
   uses: r-merkel/pup-test/.github/workflows/reusable-workflow.yml@main
   with:
     test: "this is a test"
