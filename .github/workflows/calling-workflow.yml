@@ -1,0 +1,19 @@
+---
+name: calling workflow
+on: workflow_dispatch
+
+jobs:
+
+  create-artifact:
+    - name: create artifact
+      run: |
+        echo "test test test" > test
+    - name: upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: test
+
+  call-workflow:
+  uses: r-merkel/pup-test/.github/workflows/reusable-workflow.yml@main
+  with:
+    test: "this is a test"
